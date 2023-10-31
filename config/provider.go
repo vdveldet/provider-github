@@ -12,7 +12,7 @@ import (
 
 	// "github.com/vdveldet/provider-github/config/null"
 	"github.com/vdveldet/provider-github/config/branch"
-+   "github.com/vdveldet/provider-github/config/repository"
+	"github.com/vdveldet/provider-github/config/repository"
 )
 
 const (
@@ -38,9 +38,8 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
 		repository.Configure,
-+       branch.Configure,
+		branch.Configure,
 	} {
 		configure(pc)
 	}
